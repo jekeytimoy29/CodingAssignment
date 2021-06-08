@@ -1,31 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Omri.r.SYNECTMEDIA\\source\\repos\\CodingAssignment\\CodingAssignment\\CodingAssignment.csproj": {}
+    "/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/CodingAssignment.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Omri.r.SYNECTMEDIA\\source\\repos\\CodingAssignment\\CodingAssignment\\CodingAssignment.csproj": {
+    "/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/CodingAssignment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Omri.r.SYNECTMEDIA\\source\\repos\\CodingAssignment\\CodingAssignment\\CodingAssignment.csproj",
+        "projectUniqueName": "/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/CodingAssignment.csproj",
         "projectName": "CodingAssignment",
-        "projectPath": "C:\\Users\\Omri.r.SYNECTMEDIA\\source\\repos\\CodingAssignment\\CodingAssignment\\CodingAssignment.csproj",
-        "packagesPath": "C:\\Users\\Omri.r.SYNECTMEDIA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Omri.r.SYNECTMEDIA\\source\\repos\\CodingAssignment\\CodingAssignment\\obj\\",
+        "projectPath": "/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/CodingAssignment.csproj",
+        "packagesPath": "/Users/timothyjakeflordelis/.nuget/packages/",
+        "outputPath": "/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Omri.r.SYNECTMEDIA\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/timothyjakeflordelis/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +36,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Newtonsoft.Json": {
               "target": "Package",
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.203/RuntimeIdentifierGraph.json"
         }
       }
     }

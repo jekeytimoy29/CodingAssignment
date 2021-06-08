@@ -5623,33 +5623,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Omri.r.SYNECTMEDIA\\.nuget\\packages\\": {}
+    "/Users/timothyjakeflordelis/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Omri.r.SYNECTMEDIA\\source\\repos\\CodingAssignment\\UnitTestProject\\UnitTestProject.csproj",
+      "projectUniqueName": "/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/UnitTestProject/UnitTestProject.csproj",
       "projectName": "UnitTestProject",
-      "projectPath": "C:\\Users\\Omri.r.SYNECTMEDIA\\source\\repos\\CodingAssignment\\UnitTestProject\\UnitTestProject.csproj",
-      "packagesPath": "C:\\Users\\Omri.r.SYNECTMEDIA\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Omri.r.SYNECTMEDIA\\source\\repos\\CodingAssignment\\UnitTestProject\\obj\\",
+      "projectPath": "/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/UnitTestProject/UnitTestProject.csproj",
+      "packagesPath": "/Users/timothyjakeflordelis/.nuget/packages/",
+      "outputPath": "/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/UnitTestProject/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Omri.r.SYNECTMEDIA\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/timothyjakeflordelis/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Omri.r.SYNECTMEDIA\\source\\repos\\CodingAssignment\\CodingAssignment\\CodingAssignment.csproj": {
-              "projectPath": "C:\\Users\\Omri.r.SYNECTMEDIA\\source\\repos\\CodingAssignment\\CodingAssignment\\CodingAssignment.csproj"
+            "/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/CodingAssignment.csproj": {
+              "projectPath": "/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/CodingAssignment.csproj"
             }
           }
         }
@@ -5662,6 +5661,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "MSTest.TestAdapter": {
             "target": "Package",
@@ -5691,14 +5691,11 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.203/RuntimeIdentifierGraph.json"
       }
     }
   }
