@@ -8,5 +8,11 @@ namespace CodingAssignment.Models
     public class DataFileModel
     {
         public List<DataModel> Data { get; set; }
+
+        public DataFileModel()
+        {
+            Data = new List<DataModel>();
+            
+        }
     }
 }

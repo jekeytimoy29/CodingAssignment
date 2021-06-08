@@ -20,10 +20,9 @@ namespace CodingAssignment.Services
 
         public bool Insert(DataModel model)
         {
-            var jsonData = File.ReadAllText("./AppData/DataFile.json");
-            var dataFileModel = JsonConvert.DeserializeObject<List<DataModel>>(jsonData) ?? new List<DataModel>();
+            var dataFileModel = JsonConvert.DeserializeObject<DataFileModel>(File.ReadAllText("./AppData/DataFile.json"));
 
-            foreach(DataModel m in dataFileModel)
+            foreach(DataModel m in dataFileModel.Data)
             {
                 if(m.Id == model.Id)
                 {
@@ -31,10 +30,8 @@ namespace CodingAssignment.Services
                 }
             }
 
-            dataFileModel.Add(model);
-
-            jsonData = JsonConvert.SerializeObject(dataFileModel);
-            File.WriteAllText("./AppData/DataFile.json", jsonData);
+            dataFileModel.Data.Add(model);
+            File.WriteAllText("./AppData/DataFile.json", JsonConvert.SerializeObject(dataFileModel));
 
             return true;
         }
