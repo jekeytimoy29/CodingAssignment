@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using CodingAssignment.Services;
+using CodingAssignment.Services.Interfaces;
 
 namespace CodingAssignment
 {
@@ -27,6 +29,7 @@ namespace CodingAssignment
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddScoped<IFileManagerService, FileManagerService>();
 
             services.AddSwaggerGen(c =>
             {

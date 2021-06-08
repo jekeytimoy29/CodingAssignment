@@ -11,28 +11,29 @@ using Microsoft.Extensions.Logging;
 namespace CodingAssignment.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/File")]
     public class FileController : ControllerBase
     {
+        private readonly IFileManagerService _fileManger;
 
-        private FileManagerService _fileManger;
-
-        public FileController()
+        public FileController(IFileManagerService _fileManger)
         {
+            this._fileManger = _fileManger;
         }
 
         [HttpGet]
         public DataFileModel Get()
         {
-            //Not yet implemented 
-            throw new NotImplementedException();
+            return this._fileManger.GetData();
         }
 
         [HttpPost]
         public DataFileModel Post(DataModel model)
         {
-            //Not yet implemented 
-            throw new NotImplementedException();
+            if(this._fileManger.Insert(model))
+                return Get();
+            
+            return null;
         }
 
         [HttpPut]

@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace CodingAssignment.Services
 {
-    public class FileManagerService: IFileManagerService
+    public class FileManagerService : IFileManagerService
     {
         public DataFileModel GetData()
         {
@@ -20,7 +20,23 @@ namespace CodingAssignment.Services
 
         public bool Insert(DataModel model)
         {
-            throw new NotImplementedException();
+            var jsonData = File.ReadAllText("./AppData/DataFile.json");
+            var dataFileModel = JsonConvert.DeserializeObject<List<DataModel>>(jsonData) ?? new List<DataModel>();
+
+            foreach(DataModel m in dataFileModel)
+            {
+                if(m.Id == model.Id)
+                {
+                    return false;
+                }
+            }
+
+            dataFileModel.Add(model);
+
+            jsonData = JsonConvert.SerializeObject(dataFileModel);
+            File.WriteAllText("./AppData/DataFile.json", jsonData);
+
+            return true;
         }
 
         public bool Update(DataModel model, int id)
