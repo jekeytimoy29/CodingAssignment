@@ -15,6 +15,12 @@ namespace CodingAssignment.Services.Interfaces
         DataFileModel GetData();
 
         /// <summary>
+        /// Returns the specific data model 
+        /// </summary>
+        /// <returns></returns>
+        DataModel GetDataModel(int id);
+
+        /// <summary>
         /// Insert new data model 
         /// </summary>
         /// <returns></returns>

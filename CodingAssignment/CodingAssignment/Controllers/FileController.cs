@@ -27,6 +27,12 @@ namespace CodingAssignment.Controllers
             return this._fileManger.GetData();
         }
 
+        [HttpGet("{id}")]
+        public DataModel GetDataModel(int id)
+        {
+            return this._fileManger.GetDataModel(id);
+        }
+
         [HttpPost]
         public DataFileModel Post(DataModel model)
         {

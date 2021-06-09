@@ -18,6 +18,18 @@ namespace CodingAssignment.Services
             var data = JsonConvert.DeserializeObject<DataFileModel>(File.ReadAllText(PATH));
             return data;
         }
+        
+        public DataModel GetDataModel(int id)
+        {
+            var dataFileModel = GetData();
+
+            if (dataFileModel != null)
+            {
+                return GetDataModel(dataFileModel, id);
+            }
+
+            return null;
+        }
 
         public bool Insert(DataModel model)
         {
