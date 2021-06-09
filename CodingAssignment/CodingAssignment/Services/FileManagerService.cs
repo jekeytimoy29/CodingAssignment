@@ -43,7 +43,7 @@ namespace CodingAssignment.Services
             if (dataFileModel != null && dataFileModel.Data.Count > 0)
             {
                 var dataModel = GetDataModel(dataFileModel, id);
-                if (null != dataModel  && dataModel.Id == id)
+                if (null != dataModel)
                 {
                     dataFileModel.Data[dataFileModel.Data.IndexOf(dataModel)] = model;
                     return SaveChangesToFile(dataFileModel);

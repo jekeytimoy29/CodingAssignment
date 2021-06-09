@@ -30,27 +30,28 @@ namespace CodingAssignment.Controllers
         [HttpPost]
         public DataFileModel Post(DataModel model)
         {
-            if(this._fileManger.Insert(model))
+            if (this._fileManger.Insert(model))
                 return Get();
-            
+
             return null;
         }
 
         [HttpPut]
         public DataFileModel Put(DataModel model, int id)
         {
-            if(this._fileManger.Update(model, id))
+            if (model != null && model.Id == id
+                && this._fileManger.Update(model, id))
                 return Get();
-            
+
             return null;
         }
 
         [HttpDelete]
         public DataFileModel Delete(int id)
         {
-            if(this._fileManger.Delete(id))
+            if (this._fileManger.Delete(id))
                 return Get();
-            
+
             return null;
         }
     }
