@@ -30,7 +30,8 @@ namespace CodingAssignment.Controllers
         [HttpPost]
         public DataFileModel Post(DataModel model)
         {
-            if (this._fileManger.Insert(model))
+            if (model != null && model.Id >= 0
+            && this._fileManger.Insert(model))
                 return Get();
 
             return null;
@@ -39,7 +40,7 @@ namespace CodingAssignment.Controllers
         [HttpPut]
         public DataFileModel Put(DataModel model, int id)
         {
-            if (model != null && model.Id == id
+            if (model != null && model.Id >= 0  && model.Id == id
                 && this._fileManger.Update(model, id))
                 return Get();
 
