@@ -28,38 +28,51 @@ namespace CodingAssignment.Controllers
         }
 
         [HttpGet("{id}")]
-        public DataModel GetDataModel(int id)
+        public async Task<IActionResult> GetDataModel(int id)
         {
-            return this._fileManger.GetDataModel(id);
+            var res = this._fileManger.GetDataModel(id);
+            if (null == res)
+                return NotFound();
+
+            return Ok(res);
         }
 
         [HttpPost]
-        public DataFileModel Post(DataModel model)
+        public async Task<IActionResult> Post(DataModel model)
         {
-            if (model != null && model.Id >= 0
-            && this._fileManger.Insert(model))
-                return Get();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
-            return null;
+            if (model != null 
+                && model.Id >= 0)
+            {
+                if(this._fileManger.Insert(model))
+                    return Ok(Get());
+            }
+
+            return UnprocessableEntity();
         }
 
         [HttpPut]
-        public DataFileModel Put(DataModel model, int id)
+        public async Task<IActionResult> Put(DataModel model, int id)
         {
-            if (model != null && model.Id >= 0  && model.Id == id
-                && this._fileManger.Update(model, id))
-                return Get();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
-            return null;
+            if (model != null && model.Id >= 0 && model.Id == id
+                && this._fileManger.Update(model, id))
+                    return Ok(Get());
+
+            return NotFound();
         }
 
         [HttpDelete]
-        public DataFileModel Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            if (this._fileManger.Delete(id))
-                return Get();
+            if (id >= 0 && this._fileManger.Delete(id))
+                return Ok(Get());
 
-            return null;
+            return NotFound();
         }
     }
 }
