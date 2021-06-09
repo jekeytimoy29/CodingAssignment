@@ -39,15 +39,19 @@ namespace CodingAssignment.Controllers
         [HttpPut]
         public DataFileModel Put(DataModel model, int id)
         {
-            //Not yet implemented 
-            throw new NotImplementedException();
+            if(this._fileManger.Update(model, id))
+                return Get();
+            
+            return null;
         }
 
         [HttpDelete]
         public DataFileModel Delete(int id)
         {
-            //Not yet implemented 
-            throw new NotImplementedException();
+            if(this._fileManger.Delete(id))
+                return Get();
+            
+            return null;
         }
     }
 }

@@ -26,6 +26,12 @@ C:/Users/Omri.r.SYNECTMEDIA/source/repos/CodingAssignment/CodingAssignment/bin/D
 C:/Users/Omri.r.SYNECTMEDIA/source/repos/CodingAssignment/CodingAssignment/obj/Debug/netcoreapp3.1/CodingAssignment.csproj.CoreCompileInputs.cache
 C:/Users/Omri.r.SYNECTMEDIA/source/repos/CodingAssignment/CodingAssignment/obj/Debug/netcoreapp3.1/CodingAssignment.MvcApplicationPartsAssemblyInfo.cs
 C:/Users/Omri.r.SYNECTMEDIA/source/repos/CodingAssignment/CodingAssignment/obj/Debug/netcoreapp3.1/CodingAssignment.MvcApplicationPartsAssemblyInfo.cache
+/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/obj/Debug/netcoreapp3.1/CodingAssignment.csprojAssemblyReference.cache
+/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/obj/Debug/netcoreapp3.1/CodingAssignment.AssemblyInfoInputs.cache
+/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/obj/Debug/netcoreapp3.1/CodingAssignment.AssemblyInfo.cs
+/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/obj/Debug/netcoreapp3.1/CodingAssignment.csproj.CoreCompileInputs.cache
+/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/obj/Debug/netcoreapp3.1/CodingAssignment.MvcApplicationPartsAssemblyInfo.cs
+/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/obj/Debug/netcoreapp3.1/CodingAssignment.MvcApplicationPartsAssemblyInfo.cache
 /Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/bin/Debug/netcoreapp3.1/AppData/DataFile.json
 /Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/bin/Debug/netcoreapp3.1/appsettings.Development.json
 /Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/bin/Debug/netcoreapp3.1/appsettings.json
@@ -39,12 +45,6 @@ C:/Users/Omri.r.SYNECTMEDIA/source/repos/CodingAssignment/CodingAssignment/obj/D
 /Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.Swagger.dll
 /Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerUI.dll
-/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/obj/Debug/netcoreapp3.1/CodingAssignment.csprojAssemblyReference.cache
-/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/obj/Debug/netcoreapp3.1/CodingAssignment.AssemblyInfoInputs.cache
-/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/obj/Debug/netcoreapp3.1/CodingAssignment.AssemblyInfo.cs
-/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/obj/Debug/netcoreapp3.1/CodingAssignment.csproj.CoreCompileInputs.cache
-/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/obj/Debug/netcoreapp3.1/CodingAssignment.MvcApplicationPartsAssemblyInfo.cs
-/Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/obj/Debug/netcoreapp3.1/CodingAssignment.MvcApplicationPartsAssemblyInfo.cache
 /Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/obj/Debug/netcoreapp3.1/staticwebassets/CodingAssignment.StaticWebAssets.Manifest.cache
 /Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/obj/Debug/netcoreapp3.1/staticwebassets/CodingAssignment.StaticWebAssets.xml
 /Users/timothyjakeflordelis/FileManagerTests/csharpcodingassignment/CodingAssignment/CodingAssignment/obj/Debug/netcoreapp3.1/scopedcss/bundle/CodingAssignment.styles.css

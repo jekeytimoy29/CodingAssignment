@@ -1,22 +1,9 @@
-﻿{
-  "Data":  [
-    {
-      "Id": 1,
-      "Values": [
-        "Value1a",
-        "Value1b",
-        "Value1c",
-        "Value1d"
-      ]
-    },
-    {
-      "Id": 2,
-      "Values": [
-        "Value2a",
-        "Value2b",
-        "Value2c",
-        "Value2d"
-      ]
-    }
-  ]
+{
+  "Data": [{
+    "Id": 1,
+    "Values": ["Value1a", "Value1b", "Value1c", "Value1d"]
+  }, {
+    "Id": 2,
+    "Values": ["Value2a", "Value2b", "Value2c", "Value2d"]
+  }]
 }
