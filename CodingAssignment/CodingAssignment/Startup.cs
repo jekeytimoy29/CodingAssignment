@@ -29,7 +29,7 @@ namespace CodingAssignment
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddScoped<IFileManagerService, FileManagerService>();
+            services.AddScoped<IFileManagerService>(f => new FileManagerService("./AppData/DataFile.json"));
 
             services.AddSwaggerGen(c =>
             {

@@ -11,38 +11,31 @@ namespace CodingAssignment.Services
 {
     public class FileManagerService : IFileManagerService
     {
-        private const string PATH = "./AppData/DataFile.json";
+        private readonly string _pathFileName;
+
+        public FileManagerService(string pathFileName)
+        {
+            this._pathFileName = pathFileName;
+        }
 
         public DataFileModel GetData()
         {
-            var data = JsonConvert.DeserializeObject<DataFileModel>(File.ReadAllText(PATH));
-            return data;
+            return JsonConvert.DeserializeObject<DataFileModel>(File.ReadAllText(this._pathFileName));
         }
-        
+
         public DataModel GetDataModel(int id)
         {
             var dataFileModel = GetData();
-
-            if (dataFileModel != null)
-            {
-                return GetDataModel(dataFileModel, id);
-            }
-
-            return null;
+            return ReturnDataModelIfExists(dataFileModel, id);
         }
 
         public bool Insert(DataModel model)
         {
             var dataFileModel = GetData();
-
-            if (dataFileModel != null)
+            if (null == ReturnDataModelIfExists(dataFileModel, model.Id))
             {
-                if(null == GetDataModel(dataFileModel, model.Id))
-                {
-                    dataFileModel.Data.Add(model);
-                    
-                    return SaveChangesToFile(dataFileModel);
-                }
+                dataFileModel.Data.Add(model);
+                return SaveChangesToFile(dataFileModel);
             }
 
             return false;
@@ -51,15 +44,11 @@ namespace CodingAssignment.Services
         public bool Update(DataModel model, int id)
         {
             var dataFileModel = GetData();
-
-            if (dataFileModel != null && dataFileModel.Data.Count > 0)
+            var dataModel = ReturnDataModelIfExists(dataFileModel, id);
+            if (null != dataModel)
             {
-                var dataModel = GetDataModel(dataFileModel, id);
-                if (null != dataModel)
-                {
-                    dataFileModel.Data[dataFileModel.Data.IndexOf(dataModel)] = model;
-                    return SaveChangesToFile(dataFileModel);
-                }
+                dataFileModel.Data[dataFileModel.Data.IndexOf(dataModel)] = model;
+                return SaveChangesToFile(dataFileModel);
             }
 
             return false;
@@ -68,15 +57,11 @@ namespace CodingAssignment.Services
         public bool Delete(int id)
         {
             var dataFileModel = GetData();
-
-            if (dataFileModel != null && dataFileModel.Data.Count > 0)
+            var dataModel = ReturnDataModelIfExists(dataFileModel, id);
+            if (null != dataModel)
             {
-                var dataModel = GetDataModel(dataFileModel, id);
-                if (null != dataModel)
-                {
-                    dataFileModel.Data.Remove(dataModel);
-                    return SaveChangesToFile(dataFileModel);
-                }
+                dataFileModel.Data.Remove(dataModel);
+                return SaveChangesToFile(dataFileModel);
             }
 
             return false;
@@ -86,7 +71,7 @@ namespace CodingAssignment.Services
         {
             try
             {
-                File.WriteAllText(PATH, JsonConvert.SerializeObject(dataFileModel));
+                File.WriteAllText(this._pathFileName, JsonConvert.SerializeObject(dataFileModel));
                 return true;
             }
             catch (Exception)
@@ -95,13 +80,16 @@ namespace CodingAssignment.Services
             }
         }
 
-        private DataModel GetDataModel(DataFileModel dataFileModel, int id)
+        private DataModel ReturnDataModelIfExists(DataFileModel dataFileModel, int id)
         {
-            foreach (DataModel m in dataFileModel.Data)
+            if (dataFileModel != null && dataFileModel.Data.Count > 0)
             {
-                if (m.Id == id)
+                foreach (DataModel m in dataFileModel.Data)
                 {
-                    return m;
+                    if (m.Id == id)
+                    {
+                        return m;
+                    }
                 }
             }
 
