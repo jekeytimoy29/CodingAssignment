@@ -22,9 +22,9 @@ namespace CodingAssignment.Controllers
         }
 
         [HttpGet]
-        public DataFileModel Get()
+        public async Task<IActionResult> Get()
         {
-            return this._fileManger.GetData();
+            return Ok(this._fileManger.GetData());
         }
 
         [HttpGet("{id}")]
@@ -47,7 +47,7 @@ namespace CodingAssignment.Controllers
                 && model.Id >= 0)
             {
                 if(this._fileManger.Insert(model))
-                    return Ok(Get());
+                    return await Get();
             }
 
             return UnprocessableEntity();
@@ -61,7 +61,7 @@ namespace CodingAssignment.Controllers
 
             if (model != null && model.Id >= 0 && model.Id == id
                 && this._fileManger.Update(model, id))
-                    return Ok(Get());
+                    return await Get();
 
             return NotFound();
         }
@@ -70,7 +70,7 @@ namespace CodingAssignment.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             if (id >= 0 && this._fileManger.Delete(id))
-                return Ok(Get());
+                return  await Get();
 
             return NotFound();
         }
