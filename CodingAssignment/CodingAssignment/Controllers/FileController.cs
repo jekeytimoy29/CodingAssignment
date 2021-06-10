@@ -24,53 +24,51 @@ namespace CodingAssignment.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(this._fileManger.GetData());
+            var result = await this._fileManger.GetData();
+            return Ok(result);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetDataModel(int id)
         {
-            var res = this._fileManger.GetDataModel(id);
-            if (null == res)
+            var dataModel = await this._fileManger.GetDataModel(id);
+            if (null == dataModel)
                 return NotFound();
 
-            return Ok(res);
+            return Ok(dataModel);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(DataModel model)
+        public async Task<IActionResult> Post([FromBody] DataModel model)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-
-            if (model != null 
-                && model.Id >= 0)
-            {
-                if(this._fileManger.Insert(model))
-                    return await Get();
-            }
+            
+            if(this._fileManger.Insert(model))
+                return Ok(await this._fileManger.GetData());
 
             return UnprocessableEntity();
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put(DataModel model, int id)
+        public async Task<IActionResult> Put([FromBody] DataModel model, int id)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-
-            if (model != null && model.Id >= 0 && model.Id == id
-                && this._fileManger.Update(model, id))
-                    return await Get();
+            
+            if(model.Id == id &&
+                this._fileManger.Update(model, id))
+                return Ok(await this._fileManger.GetData());
 
             return NotFound();
+            
         }
 
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            if (id >= 0 && this._fileManger.Delete(id))
-                return  await Get();
+            if(this._fileManger.Delete(id))
+                return Ok(await this._fileManger.GetData());
 
             return NotFound();
         }

@@ -18,24 +18,27 @@ namespace CodingAssignment.Services
             this._pathFileName = pathFileName;
         }
 
-        public DataFileModel GetData()
+        public async Task<DataFileModel> GetData()
         {
-            return JsonConvert.DeserializeObject<DataFileModel>(File.ReadAllText(this._pathFileName));
+            string jsonString = await File.ReadAllTextAsync(this._pathFileName);
+            return JsonConvert.DeserializeObject<DataFileModel>(jsonString);
         }
 
-        public DataModel GetDataModel(int id)
+        public async Task<DataModel> GetDataModel(int id)
         {
-            var dataFileModel = GetData();
+            var dataFileModel = await GetData();
             return ReturnDataModelIfExists(dataFileModel, id);
         }
 
         public bool Insert(DataModel model)
         {
-            var dataFileModel = GetData();
-            if (null == ReturnDataModelIfExists(dataFileModel, model.Id))
+            var dataFileModel = GetData().Result;
+
+            if(null == ReturnDataModelIfExists(dataFileModel, model.Id))
             {
                 dataFileModel.Data.Add(model);
-                return SaveChangesToFile(dataFileModel);
+                SaveChangesToFileAsync(dataFileModel);
+                return true;
             }
 
             return false;
@@ -43,12 +46,14 @@ namespace CodingAssignment.Services
 
         public bool Update(DataModel model, int id)
         {
-            var dataFileModel = GetData();
+            var dataFileModel = GetData().Result;
             var dataModel = ReturnDataModelIfExists(dataFileModel, id);
-            if (null != dataModel)
+
+            if(null != dataModel)
             {
                 dataFileModel.Data[dataFileModel.Data.IndexOf(dataModel)] = model;
-                return SaveChangesToFile(dataFileModel);
+                SaveChangesToFileAsync(dataFileModel);
+                return true;
             }
 
             return false;
@@ -56,28 +61,22 @@ namespace CodingAssignment.Services
 
         public bool Delete(int id)
         {
-            var dataFileModel = GetData();
+            var dataFileModel = GetData().Result;
             var dataModel = ReturnDataModelIfExists(dataFileModel, id);
-            if (null != dataModel)
+
+            if(null != dataModel)
             {
                 dataFileModel.Data.Remove(dataModel);
-                return SaveChangesToFile(dataFileModel);
+                SaveChangesToFileAsync(dataFileModel);
+                return true;
             }
 
             return false;
         }
 
-        private bool SaveChangesToFile(DataFileModel dataFileModel)
+        private async void SaveChangesToFileAsync(DataFileModel dataFileModel)
         {
-            try
-            {
-                File.WriteAllText(this._pathFileName, JsonConvert.SerializeObject(dataFileModel));
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            await File.WriteAllTextAsync(this._pathFileName, JsonConvert.SerializeObject(dataFileModel));
         }
 
         private DataModel ReturnDataModelIfExists(DataFileModel dataFileModel, int id)

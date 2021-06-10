@@ -50,7 +50,7 @@ namespace UnitTestProject
             //Arrange
 
             //Act
-            var res = _service.GetData();
+            var res = _service.GetData().Result;
 
             //Assert
             Assert.IsNotNull(res);
@@ -71,7 +71,7 @@ namespace UnitTestProject
             bool isContains = false;
 
             //Act
-            var res = _service.GetData();
+            var res = _service.GetData().Result;
 
             //Assert
 
@@ -110,7 +110,7 @@ namespace UnitTestProject
             };
 
             //Act
-            var res = _service.GetDataModel(dataModel1.Id);
+            var res = _service.GetDataModel(dataModel1.Id).Result;
 
             //Assert
 
@@ -126,7 +126,7 @@ namespace UnitTestProject
             int indexOutOfBounds = 100;
 
             //Act
-            var res = _service.GetDataModel(indexOutOfBounds);
+            var res = _service.GetDataModel(indexOutOfBounds).Result;
 
             //Assert
             Assert.IsNull(res);

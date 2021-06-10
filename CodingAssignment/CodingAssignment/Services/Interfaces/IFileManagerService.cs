@@ -12,13 +12,13 @@ namespace CodingAssignment.Services.Interfaces
         /// Returns the complete data model 
         /// </summary>
         /// <returns></returns>
-        DataFileModel GetData();
+        Task<DataFileModel> GetData();
 
         /// <summary>
         /// Returns the specific data model 
         /// </summary>
         /// <returns></returns>
-        DataModel GetDataModel(int id);
+        Task<DataModel> GetDataModel(int id);
 
         /// <summary>
         /// Insert new data model 
